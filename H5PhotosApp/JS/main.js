@@ -73,36 +73,8 @@ $("#container ul").delegate("li","click",function () {
 $("#largeImg").click(function () {
 	 $("#large").hide();
  });
-// .swipeLeft(function() {
-// 	cid==totalImg ? cid=totalImg :mainObj.loadImage(++cid,function () {
-// 		largeImg[0].addEventListener("webkitAnimationEnd", function () {
-// 			largeImg.removeClass("animated bounceInRight");
-// 			largeImg[0].removeEventListener("webkitAnimationEnd");
-// 		});
-// 		$("#largeImg").addClass("animated bounceInRight");
-// 	});
-// }).swipeRight(function () {
-// 	cid==1 ? cid=1: mainObj.loadImage(--cid,function () {
-// 		largeImg[0].addEventListener("webkitAnimationEnd",function () {
-// 			 largeImg.removeClass("animated bounceInLeft");
-// 			 largeImg[0].removeEventListener("webkitAnimationEnd");
-// 		})
-// 		 $("#largeImg").addClass("animated bounceInLeft"); 
-// 	});
-// });
-
-
-
-
-// 导航条的切换
-$("header nav .item a").click(function () {
-	 $("header nav .item a").removeClass("active");
-	 $(this).addClass("active");
-})
-
-
- $("#largeImg").swipe({
-        //Single swipe handler for left swipes
+$("#largeImg").swipe({
+       
         swipe:function(event, direction, distance, duration, fingerCount) {
           if (direction=="left") {
           	cid==totalImg ? cid=totalImg :mainObj.loadImage(++cid,function () {
@@ -122,5 +94,27 @@ $("header nav .item a").click(function () {
 			 	$("#largeImg").addClass("animated bounceInLeft"); 
 		 	});
           }  
-      	}
+      	},
+      	threshold:30
       });
+
+// 导航条的切换
+$("header nav .item a").click(function () {
+	 $("header nav .item a").removeClass("active");
+	 $(this).addClass("active");
+})
+// 侧滑菜单
+$(".menu").click(function () {
+	  $(".mask").show();
+	  $(".sidebar").css("right","0rem");
+})
+$(".mask,.sidebar").swipe({
+	swipe:function (event,direction,distance,duration,fingerCount) {
+		 if(direction=="right"){
+		 	$(".mask").hide();
+		 	$(".sidebar").css("right","-4.5rem");
+		 }
+	},
+	threshold:30
+});
+

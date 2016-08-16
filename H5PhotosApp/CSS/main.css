@@ -20,6 +20,11 @@ nav ul
 	flex-flow: row wrap;
 	justify-content: space-around;
 	text-align: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #eee;
+	z-index: 1
 }
 nav ul li.item
 {
@@ -30,11 +35,13 @@ nav ul li.item
 nav ul li.menu
 {
 	flex:1;
-
+	line-height: 1rem;
 }
 nav ul li.menu span
 {
 	color: #000;
+	margin:0;
+	padding: 0;
 }
 nav ul li a
 {
@@ -52,6 +59,7 @@ header
 	height: 1rem;
 	margin-bottom: 0.2rem;
 	box-shadow: 1px 1px 2px #666;
+
 }
 .active
 {
@@ -66,18 +74,68 @@ header
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 2;
+	display: none;
+}
+.sidebar .sidebarHead
+{
+	height: 2rem;
+	background-color: #444;
+}
+.sidebar .sidebarHead ul
+{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	line-height: 2rem;
+	font-size: 18px;
+	color: #fff;
+}
+.sidebar .sidebarHead ul li
+{
+	margin-left: 0.4rem;
+}
+.sidebar .sidebarHead ul img
+{
+	width: 1rem;
+	height: 1rem;
+	margin-top: 0.5rem;
 }
 .sidebar
 {
-	width: 4rem;
+	width: 4.5rem;
 	background-color: #000;
-	color: #fff;
 	height: 100%;
 	position: fixed;
 	top: 0;
-	right: 0rem;
-	z-index: 2;
+	right: -4.5rem;
+	z-index: 3;
+	transition: right 0.5s;
+}
+.sidebar ul.itemGroup
+{
+	margin-top: 0.2rem;
+}
+.sidebar ul li a
+{
+	font-size: 16px;
+	padding-left: 0.2rem;
+	display: block;
+	line-height: 1.3rem;
+	width: 100%;
+	color: #fff;
+	text-decoration: none;
+}
+.sidebar ul li a:active
+{
+	background-color: #444;
+}
+.text
+{
+	display: inline;
+	margin-left: 0.2rem;
 }
 /*内容部分样式*/
 #container ul
@@ -101,4 +159,5 @@ header
 	top: 0;
 	left: 0;
 	background-color: #000;
+	z-index: 1;
 }
