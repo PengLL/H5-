@@ -13,16 +13,18 @@
 	<script type="text/javascript" src="JS/fastclick.js"></script>
 </head>
 <body>
+<!-- 导航条 -->
 <header>
 	<nav>
 		<ul class="item-container">
-			<li class="item"><a href="#" class="active">风景</a></li>
-			<li class="item"><a href="#">运动</a></li>
-			<li class="item"><a href="#">清新</a></li>
+			<li class="item"><a href="#scenery" class="active" data-id="scenery" data-count="17">风景</a></li>
+			<li class="item"><a href="#sports" data-id="sports" data-count="25">运动</a></li>
+			<li class="item"><a href="#fresh" data-id="fresh" data-count="23">清新</a></li>
 			<li class="menu"><span class="icono-hamburger"></sapn></li>
 		</ul>
 	</nav>
 </header>
+<!-- 侧滑菜单 -->
 <div class="mask"></div>
 <div class="sidebar">
 	<div class="sidebarHead">
@@ -37,29 +39,28 @@
 		<li class="sideItem"><a href="#"><span class="icono-mail"></span>  <p class="text">联系作者</p></a></li>
 	</ul>
 </div>
-<div id="container">
-	<ul id="imgList">
+<!-- 三个类别的图片内容 -->
+<div id="scenery" class="container">
+	<ul class="imgList">
 
 	</ul>
 </div>
+
+<div id="sports" class="container">	
+	<ul class="imgList">
+
+	</ul>
+</div>
+<div id="fresh" class="container marginTop">
+	<ul class="imgList">
+
+	</ul>
+</div>
+<!-- 大图 -->
 <div id="large" class="animated fadeIn">
 	<img id="largeImg"></img>
 </div>
-<div id="yundong">
-	运动版块
-</div>
-<div id="qingxin">
-	清新版块
-</div>
-<div id="qingxin">
-	清新版块
-</div>
-<div id="qingxin">
-	清新版块
-</div>
-<div id="qingxin">
-	清新版块
-</div>
+
 <script type="text/javascript" src="JS/main.js"></script>
 </body>
 </html>
